@@ -19,7 +19,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/api", index);
 app.get("/hello", (req, res) => res.send("Hello!"));
-app.use("/static", (req, res) => res.sendFile("./views/build/index.html"));
+app.get("/static", (req, res) =>
+  res.sendFile(path.join(__dirname, "../views/build", "index.html"))
+);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
