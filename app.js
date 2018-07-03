@@ -21,7 +21,7 @@ app.use("/api", index);
 app.get("/hello", (req, res) => res.send("Hello!"));
 app.use(express.static(path.join(__dirname, "views/build")));
 // Handle React routing, return all requests to React app
-app.get("/static", function(req, res) {
+app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./views/build", "index.html"));
 });
 
