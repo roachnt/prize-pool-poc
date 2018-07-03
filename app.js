@@ -18,6 +18,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/api", index);
+app.get("/hello", (req, res) => res.send("Hello!"));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -26,6 +27,7 @@ app.use(function(req, res, next) {
   next(err);
 });
 
+/*
 if (process.env.NODE_ENV === "production") {
   // Serve any static files
   app.use(express.static(path.join(__dirname, "views/build")));
@@ -34,7 +36,7 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname, "views/build", "index.html"));
   });
 }
-
+*/
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
