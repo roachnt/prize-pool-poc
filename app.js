@@ -6,7 +6,7 @@ var cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
 const db = require("./db");
 var index = require("./routes/index");
-require("dotenv").load();
+require("dotenv").config();
 
 var app = express();
 
