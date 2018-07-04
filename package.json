@@ -6,7 +6,7 @@
     "client": "cd views && yarn start",
     "server": "nodemon bin/www",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-    "start": "node bin/www"
+    "start": "cd views && yarn build && cd .. && node bin/www"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
