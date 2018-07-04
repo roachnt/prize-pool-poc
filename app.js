@@ -20,6 +20,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/api", index);
 app.get("/hello", (req, res) => res.send("Hello!"));
 
+console.log("process.env.NODE_ENV: " + process.env.NODE_ENV);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "views/build")));
   // Handle React routing, return all requests to React app
