@@ -6,7 +6,7 @@ import { loginUserAction } from "../actions/userActions";
 import LoginForm from "./LoginForm";
 
 injectGlobal`
-  @import url('https://fonts.googleapis.com/css?family=Lato:300');
+  @import url('https://fonts.googleapis.com/css?family=Lato');
   html, body {
     background-repeat: no-repeat;
     background: linear-gradient(120deg,#3a3590,#004dad);
