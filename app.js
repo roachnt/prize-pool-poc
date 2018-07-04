@@ -20,14 +20,11 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/api", index);
 app.get("/hello", (req, res) => res.send("Hello!"));
 
-console.log("process.env.NODE_ENV: " + process.env.NODE_ENV);
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "views/build")));
-  // Handle React routing, return all requests to React app
-  app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "./views/build", "index.html"));
-  });
-}
+app.use(express.static(path.join(__dirname, "views/build")));
+// Handle React routing, return all requests to React app
+app.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "./views/build", "index.html"));
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
